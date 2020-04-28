@@ -1,1 +1,2 @@
-# handyman-model-api
+# email notification service
+

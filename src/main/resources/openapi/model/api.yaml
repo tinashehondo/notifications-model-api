@@ -1,0 +1,15 @@
+openapi: "3.0.0"
+info:
+  description: "Skeleton Service for creating models and API interface for rest ws to give to clients"
+  version: "0.0.1"
+  title: "Model Service Skeleton API"
+  contact:
+    email: "tinashehondo@gmail.com"
+tags:
+  - name: "user"
+    description: "User - dummy tag to initialise service"
+#servers:
+#  - url: http://localhost:8000/
+#    description: "local host"
+
+paths:
