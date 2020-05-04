@@ -1,0 +1,13 @@
+Message:
+  title: Message
+  description: Message object with the sms notication to be sent
+  allOf:
+    - properties:
+        sender:
+          type: string
+        message:
+          type: string
+        notificationType:
+          type: string
+        receiver:
+          type: string

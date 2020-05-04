@@ -1,0 +1,15 @@
+MessageResponse:
+  title: MessageResponse
+  description: Message Response object with the sms notication to be sent
+  allOf:
+    - properties:
+        referenceId:
+          type: string
+        sender:
+          type: string
+        message:
+          type: string
+        notificationType:
+          type: string
+        receiver:
+          type: string

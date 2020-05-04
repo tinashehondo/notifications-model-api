@@ -133,24 +133,24 @@
                 <version>3.3.4</version>
                 <executions>
                     <execution>
-                        <id>handyman-service</id>
+                        <id>notification-service</id>
                         <goals>
                             <goal>generate</goal>
                         </goals>
                         <configuration>
                             <inputSpec>${project.basedir}/src/main/resources/openapi/model/api.yaml</inputSpec>
-                            <artifactId>wallet-service</artifactId>
+                            <artifactId>notification-service</artifactId>
                             <output>${basedir}/target/generated-sources</output>
                             <language>spring</language>
-                            <modelPackage>uk.co.tinashehondo.email.rest.model</modelPackage>
-                            <apiPackage>uk.co.tinashehondo.email.rest.api</apiPackage>
+                            <modelPackage>uk.co.tinashehondo.notification.rest.model</modelPackage>
+                            <apiPackage>uk.co.tinashehondo.notification.rest.api</apiPackage>
                             <generateSupportingFiles>true</generateSupportingFiles>
                             <configOptions>
                                 <sourceFolder>src/main/java</sourceFolder>
                                 <interfaceOnly>true</interfaceOnly>
                                 <library>spring-boot</library>
                                 <dateLibrary>java8-localdatetime</dateLibrary>
-                                <configPackage>uk.co.tinashehondo.email.config</configPackage>
+                                <configPackage>uk.co.tinashehondo.notification.config</configPackage>
                                 <singleContentTypes>true</singleContentTypes>
                             </configOptions>
                         </configuration>
