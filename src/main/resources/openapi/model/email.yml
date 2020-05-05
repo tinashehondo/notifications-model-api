@@ -1,0 +1,15 @@
+Email:
+  title: Email
+  description: Email object with the email notication to be sent
+  allOf:
+    - properties:
+        sender:
+          type: string
+        message:
+          type: string
+        notificationType:
+          type: string
+        receiver:
+          type: string
+        subject:
+          type: string
