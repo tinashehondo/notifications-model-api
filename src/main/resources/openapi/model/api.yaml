@@ -14,7 +14,7 @@ tags:
 
 paths:
   /notification/sms/{refId}:
-    post:
+    get:
       description: Get a single message by reference id.
       # operationId is an optional unique string used to identify an operation. If provided, these IDs must be unique among all operations described in my API.
       operationId: getMessageByReferenceId
