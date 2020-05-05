@@ -1,0 +1,17 @@
+EmailResponse:
+  title: EmailResponse
+  description: Email Response object with the email notication to be sent
+  allOf:
+    - properties:
+        referenceId:
+          type: string
+        sender:
+          type: string
+        message:
+          type: string
+        notificationType:
+          type: string
+        receiver:
+          type: string
+        subject:
+          type: string
