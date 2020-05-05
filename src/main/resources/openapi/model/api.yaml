@@ -13,6 +13,46 @@ tags:
 #    description: "local host"
 
 paths:
+  /notification/sms/{refId}:
+    post:
+      description: Get a single message by reference id.
+      # operationId is an optional unique string used to identify an operation. If provided, these IDs must be unique among all operations described in my API.
+      operationId: getMessageByReferenceId
+      parameters:
+        - in: path
+          name: refId
+          schema:
+            type: string
+          required: true
+          description: reference ID of the message to get
+
+      responses:
+        200:
+          description: The Message Response object with sms details fetched by a ref ID
+          content:
+            application/json:
+              schema:
+                $ref: ./message-response.yml#/MessageResponse
+        400:
+          description: HTTP 400 Failed to send SMS
+          content:
+            application/json:
+              schema:
+                $ref: ./errors/problem.yml#/Problem
+        401:
+          description: Unauthorized - The request requires user authentication
+        403:
+          description: Forbidden - The server understood the request, but is refusing it or
+            the access is not allowed.
+        404:
+          description: Resource not found
+        500:
+          description: HTTP 500 Error Response
+          content:
+            application/json:
+              schema:
+                $ref: ./errors/problem.yml#/Problem
+
   /notification/sms:
     post:
       description: sending sms notifications
