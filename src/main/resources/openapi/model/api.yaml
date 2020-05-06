@@ -94,7 +94,7 @@ paths:
                 $ref: ./errors/problem.yml#/Problem
 
   #Get All SMSes
-  /notification/all-sms:
+  /notification/sms:
     get:
       description: Returns a list of SMSes
       responses:
