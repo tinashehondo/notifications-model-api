@@ -93,8 +93,6 @@ paths:
               schema:
                 $ref: ./errors/problem.yml#/Problem
 
-  #Get All SMSes
-  /notification/sms:
     get:
       description: Returns a list of SMSes
       responses:
