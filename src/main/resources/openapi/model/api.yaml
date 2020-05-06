@@ -93,3 +93,33 @@ paths:
               schema:
                 $ref: ./errors/problem.yml#/Problem
 
+  #Get All SMSes
+  /notification/all-sms:
+    get:
+      description: Returns a list of SMSes
+      responses:
+        '200':
+          description: Successfully returned a list of SMSes
+          content:
+            application/json:
+              schema:
+                $ref: ./email-response.yml#/MessageResponse
+        400:
+          description: HTTP 400 Failed to get SMSes
+          content:
+            application/json:
+              schema:
+                $ref: ./errors/problem.yml#/Problem
+        401:
+          description: Unauthorized - The request requires user authentication
+        403:
+          description: Forbidden - The server understood the request, but is refusing it or
+            the access is not allowed.
+        404:
+          description: Resource not found
+        500:
+          description: HTTP 500 Error Response
+          content:
+            application/json:
+              schema:
+                $ref: ./errors/problem.yml#/Problem
