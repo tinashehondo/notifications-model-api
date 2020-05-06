@@ -54,44 +54,74 @@ paths:
               schema:
                 $ref: ./errors/problem.yml#/Problem
 
-    /notification/email:
-      post:
-        description: sending email notifications
-        operationId: sendEmailNotification
-        tags:
-          - notificationService
-        requestBody:
+  /notification/email:
+    post:
+      description: sending email notifications
+      operationId: sendEmailNotification
+      tags:
+        - notificationService
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ./email.yml#/Email
+        description:  Allows sending of email notification
+        required: true
+      responses:
+        200:
+          description: The Email Response object with email details and a ref ID
           content:
             application/json:
               schema:
-                $ref: ./email.yml#/Email
-          description:  Allows sending of email notification
-          required: true
-        responses:
-          200:
-            description: The Email Response object with email details and a ref ID
-            content:
-              application/json:
-                schema:
-                  $ref: ./email-response.yml#/EmailResponse
-          400:
-            description: HTTP 400 Failed to send Email
-            content:
-              application/json:
-                schema:
-                  $ref: ./errors/problem.yml#/Problem
-          401:
-            description: Unauthorized - The request requires user authentication
-          403:
-            description: Forbidden - The server understood the request, but is refusing it or
-              the access is not allowed.
-          404:
-            description: Resource not found
-          500:
-            description: HTTP 500 Error Response
-            content:
-              application/json:
-                schema:
-                  $ref: ./errors/problem.yml#/Problem
+                $ref: ./email-response.yml#/EmailResponse
+        400:
+          description: HTTP 400 Failed to send Email
+          content:
+            application/json:
+              schema:
+                $ref: ./errors/problem.yml#/Problem
+        401:
+          description: Unauthorized - The request requires user authentication
+        403:
+          description: Forbidden - The server understood the request, but is refusing it or
+            the access is not allowed.
+        404:
+          description: Resource not found
+        500:
+          description: HTTP 500 Error Response
+          content:
+            application/json:
+              schema:
+                $ref: ./errors/problem.yml#/Problem
 
 
+#Get All Emails
+  /notification/all-emails:
+    get:
+      description: Returns a list of emails
+      responses:
+        '200':
+          description: Successfully returned a list of emails
+          content:
+            application/json:
+              schema:
+                $ref: ./email-response.yml#/EmailResponse
+        400:
+          description: HTTP 400 Failed to get emails
+          content:
+            application/json:
+              schema:
+                $ref: ./errors/problem.yml#/Problem
+        401:
+          description: Unauthorized - The request requires user authentication
+        403:
+          description: Forbidden - The server understood the request, but is refusing it or
+            the access is not allowed.
+        404:
+          description: Resource not found
+        500:
+          description: HTTP 500 Error Response
+          content:
+            application/json:
+              schema:
+                $ref: ./errors/problem.yml#/Problem
