@@ -54,7 +54,7 @@ paths:
               schema:
                 $ref: ./errors/problem.yml#/Problem
 
-  /notification/email:
+  /notification/emails:
     post:
       description: sending email notifications
       operationId: sendEmailNotification
@@ -94,9 +94,6 @@ paths:
               schema:
                 $ref: ./errors/problem.yml#/Problem
 
-
-#Get All Emails
-  /notification/all-emails:
     get:
       description: Returns a list of emails
       responses:
