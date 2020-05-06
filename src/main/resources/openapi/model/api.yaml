@@ -94,9 +94,7 @@ paths:
               schema:
                 $ref: ./errors/problem.yml#/Problem
 
-
-#Get All Emails
-  /notification/all-emails:
+  /notification/email:
     get:
       description: Returns a list of emails
       responses:
